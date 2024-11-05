@@ -345,9 +345,17 @@ class ListeSimpleTest {
 
         Noeud premier = listeATester.tete;
         Noeud dernier = listeATester.tete.getSuivant().getSuivant();
-        
+
         listeATester.echanger(premier, dernier);
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
     }
     
+    @Test
+    void echanger2NoeudsInexistants() {
+        Noeud r1 = listeATester.tete;
+        Noeud r2 = listeATester.tete;
+        listeATester.echanger(r1, r2);
+        assertEquals("ListeSimple()", listeATester.toString());  // La liste est toujours vide
+    }
+
 }
