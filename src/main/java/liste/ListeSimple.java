@@ -119,12 +119,12 @@ public class ListeSimple {
 
     public void echanger(Noeud r1, Noeud r2) {
 
-        if (r1 == r2)
+        if (r1 == r2 || r1 == null || r2 == null)
             return;
 
         Noeud precedentR1 = r1 != tete ? getPrecedent(r1) : null;
         Noeud precedentR2 = r2 != tete ? getPrecedent(r2) : null;
-        
+
 
         if (r1 == tete)
             tete = r2;
