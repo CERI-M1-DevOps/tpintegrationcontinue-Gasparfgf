@@ -18,5 +18,8 @@ jobs:
           distribution: 'corretto'
           java-version: 21
 
-      - name: Build package with Maven
-        run: mvn -B package --file pom.xml
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CERI-M1-DevOps_tpintegrationcontinue-Gasparfgf
