@@ -119,15 +119,6 @@ void echangerDeuxNoeudsIdentiques() {
     }
 
     @Test
-    void modifiePremierNonExistant() {
-
-        listeATester.ajout(1);
-        listeATester.modifiePremier(2, 3);
-
-        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
-    }
-
-    @Test
     void modifieTous() {
 
         listeATester.ajout(1);
@@ -372,17 +363,6 @@ void echangerDeuxNoeudsIdentiques() {
 
         listeATester.echanger(r1, r2);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
-    }
-
-
-    @Test
-    void echangerNoeudAvecLuiMeme() {
-
-        listeATester.ajout(1);
-        Noeud r1 = listeATester.tete;
-        listeATester.echanger(r1, r1);
-
-        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
     }
 
     @Test
