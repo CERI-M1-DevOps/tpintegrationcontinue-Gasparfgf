@@ -13,7 +13,55 @@ class ListeSimpleTest {
     public void init() {
         listeATester = new ListeSimple();
     }
+@Test
+void modifiePremierElementInexistant() {
+    listeATester.ajout(1);
+    listeATester.modifiePremier(2, 3);
+    assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+}
 
+@Test
+void modifieTousElementsInexistants() {
+    listeATester.ajout(1);
+    listeATester.modifieTous(2, 3);
+    assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+}
+
+@Test
+void supprimePremierElementDeuxiemePosition() {
+    listeATester.ajout(1);
+    listeATester.ajout(2);
+    listeATester.supprimePremier(2);
+    assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+}
+
+@Test
+void supprimeTousElementDeuxiemePosition() {
+    listeATester.ajout(1);
+    listeATester.ajout(2);
+    listeATester.supprimeTous(2);
+    assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+}
+
+@Test
+void getAvantDernierListeVide() {
+    assertNull(listeATester.getAvantDernier());
+}
+
+@Test
+void inverserListeUnElement() {
+    listeATester.ajout(1);
+    listeATester.inverser();
+    assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+}
+
+@Test
+void echangerDeuxNoeudsIdentiques() {
+    listeATester.ajout(1);
+    Noeud r1 = listeATester.tete;
+    listeATester.echanger(r1, r1);
+    assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+}
     @Test
     void listeConstruiteVide() {
         assertNull(listeATester.tete);
