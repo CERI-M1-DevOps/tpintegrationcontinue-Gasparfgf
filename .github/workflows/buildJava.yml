@@ -33,6 +33,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-sonarqube-
 
+      - name: Build with Maven
+        run: mvn -B compile package --file pom.xml
+        
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
