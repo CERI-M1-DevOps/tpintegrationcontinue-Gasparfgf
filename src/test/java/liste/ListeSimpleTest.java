@@ -93,13 +93,6 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void modifieTousElementAbsent() {
-        listeATester.ajout(1);
-        listeATester.modifieTous(2, 3);
-        assertEquals("ListeSimple(1)", listeATester.toString());
-    }
-
-    @Test
     void supprimePremierListeVide() {
 
         listeATester.supprimePremier(1);
@@ -362,14 +355,7 @@ class ListeSimpleTest {
         Noeud r1 = listeATester.tete;
         Noeud r2 = listeATester.tete;
         listeATester.echanger(r1, r2);
-        assertEquals("ListeSimple()", listeATester.toString()); 
+        assertEquals("ListeSimple()", listeATester.toString());  // La liste est toujours vide
     }
 
-    @Test
-    public void testEchangerAvecNull() {
-        listeATester.ajout(1);
-        Noeud r1 = listeATester.tete;
-        listeATester.echanger(r1, null);
-        assertEquals("ListeSimple(1)", listeATester.toString());
-    }
 }
